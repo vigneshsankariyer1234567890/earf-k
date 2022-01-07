@@ -19,71 +19,73 @@ const fs = require('fs-web');
 // ]    = Loop end      = C6
 
 function compile(program) {
-  let tape = Array(30000).fill(0)
-  let ptr = 0
-  let isLooping = false
-  let loopStack = []
-  let innerLoops = 0
+  // let tape = Array(30000).fill(0)
+  // let ptr = 0
+  // let isLooping = false
+  // let loopStack = []
+  // let innerLoops = 0
   let notes = []
 
+  console.log(program.length)
   for (let i = 0; i < program.length; i++) {
     const char = program[i]
 
-    if (isLooping) {
-      if (char === '[') {
-        innerLoops++
-        if (char === ']') {
-          if (innerLoops === 0) {
-            isLooping = false
-          } else {
-            innerLoops--
-          }
-        }
-      }
-      continue
-    }
+    // if (isLooping) {
+    //   if (char === '[') {
+    //     innerLoops++
+    //     if (char === ']') {
+    //       if (innerLoops === 0) {
+    //         isLooping = false
+    //       } else {
+    //         innerLoops--
+    //       }
+    //     }
+    //   }
+    //   continue
+    // }
 
     switch (char) {
       case '+':
-        tape[ptr]++
+        // tape[ptr]++
         notes.push('G5')
         break
       case '-':
-        tape[ptr]--
+        // tape[ptr]--
         notes.push('F5')
         break
       case ',':
-        tape[ptr] = prompt()[0].charCodeAt()
+        // tape[ptr] = prompt()[0].charCodeAt()
         notes.push('B5')
         break
       case '.':
-        console.log(String.fromCharCode(tape[ptr]))
+        // console.log(String.fromCharCode(tape[ptr]))
         notes.push('A5')
         break
       case '>':
-        ptr++
-        tape[ptr] = tape[ptr] || 0
+        // ptr++
+        // tape[ptr] = tape[ptr] || 0
         notes.push('E5')
         break
       case '<':
-        ptr--
-        tape[ptr] = tape[ptr] || 0
+        // ptr--
+        // tape[ptr] = tape[ptr] || 0
         notes.push('D5')
         break
       case '[':
-        tape[ptr] === 0 ? (isLooping = true) : loopStack.push(i)
+        // tape[ptr] === 0 ? (isLooping = true) : loopStack.push(i)
         notes.push('C5')
         break
       case ']':
-        tape[ptr] !== 0
-          ? (i = loopStack[loopStack.length - 1])
-          : loopStack.pop()
+        // tape[ptr] !== 0
+        //   ? (i = loopStack[loopStack.length - 1])
+        //   : loopStack.pop()
         notes.push('C6')
         break
       default:
         break
     }
   }
+  console.log(notes.length)
 
   var file = new Midi.File();
   var track = new Midi.Track();

@@ -21,7 +21,7 @@ const UploadComponent = (props) => {
             let audio = new Audio(src);
             audio.play();
 
-            window.open(src);
+            // window.open(src);
             
             // anchor.setAttribute('href', src);
         });
