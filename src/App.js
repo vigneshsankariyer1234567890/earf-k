@@ -40,19 +40,22 @@ function App() {
   return (
     <>
       <header className="items-center justify-between px-6 py-4 bg-gray-100">
-        <h1 className="text-xl font-medium text-red-500">EARFUCK</h1>
+        <h1 className="text-xl font-bold text-red-500">EARF_CK</h1>
       </header>
       <div className="flex flex-1 gap-12 p-6">
         <section className="flex flex-col gap-4 p-6 bg-gray-100 rounded sm:w-96">
           <div>
-            <h2 className="text-xl font-medium text-red-500">
+            <h2 className="mb-2 text-xl font-medium text-red-500">
               What is Brainfuck?
             </h2>
-            <p className="text-gray-800">
+            <p className="mb-2 text-gray-800">
               Brainfuck is an esoteric programming language created in 1993 by
               Urban Müller. Notable for its extreme minimalism, the language
               consists of only eight simple commands, a data pointer and an
-              instruction pointer. While it is fully Turing complete, it is not
+              instruction pointer.
+            </p>
+            <p className="text-gray-800">
+              While it is fully Turing complete, it is not
               intended for practical use, but to challenge and amuse
               programmers. Brainfuck simply requires one to break commands into
               microscopic steps. The language's name is a reference to the slang
@@ -61,21 +64,39 @@ function App() {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-medium text-red-500">
-              What is Earfuck?
+            <h2 className="mb-2 text-xl font-medium text-red-500">
+              What is Earf_ck?
             </h2>
-            <p className="text-gray-800">Ur mom</p>
+            <p className="mb-2 text-gray-800">
+              Earf_ck is a language developed to convert Audio into Brainfuck programming
+              language, and vice versa. 
+            </p>
+            <p className="text-gray-800">
+              This was developed purely for fun, but this might have practical applications. Maybe.
+            </p>
           </div>
           <div>
-            <h2 className="text-xl font-medium text-red-500">
-              How do I use this web app?
+            <h2 className="mb-2 text-xl font-medium text-red-500">
+              Why do this? This is pointless.
             </h2>
-            <p className="text-gray-800">Ur mom</p>
+            <p className="text-gray-800">Yes.</p>
+          </div>
+          <div>
+            <h2 className="mb-2 text-xl font-medium text-red-500">
+              How long did this take?
+            </h2>
+            <p className="text-gray-800">More than we thought we would.</p>
+          </div>
+          <div>
+            <h2 className="mb-2 text-xl font-medium text-red-500">
+              What's next?
+            </h2>
+            <p className="text-gray-800">No idea.</p>
           </div>
         </section>
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-4">
           <h2 className="text-xl font-medium text-red-500">
-            Brainfuck to Earfuck converter
+            Brainfuck to Earf_ck converter
           </h2>
           <label
             htmlFor="instructions"
@@ -109,7 +130,7 @@ function App() {
           onSubmit={(event) => {event.preventDefault()}}
         >
           <h2 className="text-xl font-medium text-red-500">
-            Earfuck to Brainfuck converter
+            Earf_ck to Brainfuck converter
           </h2>
           <label htmlFor="upload" className="text-lg font-medium text-gray-800">
             1. Upload a MIDI file
