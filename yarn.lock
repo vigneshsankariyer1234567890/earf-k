@@ -7410,6 +7410,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsmidgen@git+https://github.com/dingram/jsmidgen.git":
+  version: 0.1.5
+  resolution: "jsmidgen@https://github.com/dingram/jsmidgen.git#commit=97c1270a4af6350d1bf278571a273a4a5fac617c"
+  checksum: 572887a5720e9044f3a2d2d49ebd5595473ea59d854da2fa2024894fa9e830e5b5c9663dbca2d122959c1174dec8c0fe06f50ec692c9e456d84de42ebcef1838
+  languageName: node
+  linkType: hard
+
 "json-parse-better-errors@npm:^1.0.2":
   version: 1.0.2
   resolution: "json-parse-better-errors@npm:1.0.2"
@@ -8080,6 +8087,7 @@ __metadata:
     "@testing-library/react": ^12.0.0
     "@testing-library/user-event": ^13.2.1
     ace-builds: ^1.4.13
+    jsmidgen: "git+https://github.com/dingram/jsmidgen.git"
     react: ^17.0.2
     react-ace: ^9.5.0
     react-dom: ^17.0.2
