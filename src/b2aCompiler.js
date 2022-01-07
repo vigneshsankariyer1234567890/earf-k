@@ -1,5 +1,6 @@
-var fs = require('fs');
-var Midi = require('jsmidgen');
+const fs = require('fs');
+const Midi = require('jsmidgen');
+const synth = require('synth-js');
 
 // Converts a given Brainfuck program into audio.
 // The Brainfuck-Frequency mapping is as follows:
@@ -85,6 +86,7 @@ function compile(program) {
     }
 
     // The commented-out sections will add basic percussion and bassline to the melody... for fun :)
+    // The percussion and bassline only can be heard for the MIDI format...
     
     // let lownotes = notes.slice();
     // lownotes = lownotes.map(note => note[0] + (parseInt(note[1]) - 1).toString());
@@ -115,7 +117,16 @@ function compile(program) {
         // }
     }
 
-    fs.writeFileSync('src/brainfuck.mid', file.toBytes(), 'binary');
+    // Convert file into .mid format (MIDI file)
+    fs.writeFileSync('src/sounds/brainfuck.mid', file.toBytes(), 'binary');
+
+    // Read file from .mid format (MIDI file)
+    let midiBuffer = fs.readFileSync('src/sounds/brainfuck.mid');
+
+    // Convert MIDI buffer to WAV buffer
+    let wavBuffer = synth.midiToWav(midiBuffer).toBuffer();
+
+    fs.writeFileSync('src/sounds/brainfuck.wav', wavBuffer, {encoding: 'binary'});
 }
 
 compile(">++++++++[<+++++++++>-]<.>++++[<+++++++>-]<+.+++++++..+++.>>++++++[<+++++++>-]<++.------------.>++++++[<+++++++++>-]<+.<.+++.------.--------.>>>++++[<++++++++>-]<+.");

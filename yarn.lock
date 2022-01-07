@@ -8092,6 +8092,7 @@ __metadata:
     react-ace: ^9.5.0
     react-dom: ^17.0.2
     react-scripts: 5.0.0
+    synth-js: "git+https://github.com/patrickroberts/synth-js.git"
     web-vitals: ^2.1.0
   languageName: unknown
   linkType: soft
@@ -11011,6 +11012,15 @@ __metadata:
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
   checksum: 6e8fc7e1486b8b54bea91199d9535bb72f10842e40c79e882fc94fb7b14b89866adf2fd79efa5ebb5b658bc07fb459ccce5ac0e99ef3d72f474e74aaf284029d
+  languageName: node
+  linkType: hard
+
+"synth-js@git+https://github.com/patrickroberts/synth-js.git":
+  version: 0.1.2
+  resolution: "synth-js@https://github.com/patrickroberts/synth-js.git#commit=05a574a03f22b81293ec02d667a7db66b7d02ad3"
+  bin:
+    synth: ./bin/synth.js
+  checksum: 4d7c5f2c76e30493816e610bd52757792ffdca933df7a2d8ab29cbf015347c053939840102e155109838c1190ebfa722da68daed5a8c1a627950441a19174a5d
   languageName: node
   linkType: hard
 
