@@ -26,7 +26,6 @@ function compile(program) {
   // let innerLoops = 0
   let notes = []
 
-  console.log(program.length)
   for (let i = 0; i < program.length; i++) {
     const char = program[i]
 
@@ -85,7 +84,6 @@ function compile(program) {
         break
     }
   }
-  console.log(notes.length)
 
   var file = new Midi.File();
   var track = new Midi.Track();

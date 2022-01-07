@@ -5589,6 +5589,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fft.js@git+https://github.com/indutny/fft.js.git":
+  version: 4.0.4
+  resolution: "fft.js@https://github.com/indutny/fft.js.git#commit=4a18cf88fcdbd4ad5acca6eaea06a0b462047835"
+  checksum: b91e128b0b62f70ad3a719e3e1f0fc35a902a54a830f8e50e3ce3a57799aa93d78a6317481e8e9b9d485dde3bf74e17d653928a56ceb47b1edad034e6bcdc529
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -8129,8 +8136,10 @@ __metadata:
     "@testing-library/user-event": ^13.2.1
     ace-builds: ^1.4.13
     autoprefixer: ^10.4.1
+    fft.js: "git+https://github.com/indutny/fft.js.git"
     fs-web: ^1.0.1
     jsmidgen: ^0.1.5
+    node-wav: ^0.0.2
     postcss: ^8.4.5
     react: ^17.0.2
     react-ace: ^9.5.0
@@ -8221,6 +8230,13 @@ __metadata:
   version: 2.0.1
   resolution: "node-releases@npm:2.0.1"
   checksum: b20dd8d4bced11f75060f0387e05e76b9dc4a0451f7bb3516eade6f50499ea7768ba95d8a60d520c193402df1e58cb3fe301510cc1c1ad68949c3d57b5149866
+  languageName: node
+  linkType: hard
+
+"node-wav@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "node-wav@npm:0.0.2"
+  checksum: b2c855d3dc9b9a31cb9e5d6fb5cb852c540d084ac0a9b9174023406fb98e9c23b9327f699923a839a6c9a423a36d310a7c8382375fd9f2d41c0720c125b47195
   languageName: node
   linkType: hard
 
