@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ReactAudioPlayer from 'react-audio-player'
 
 function App() {
   const [value, setValue] = useState('')
@@ -30,6 +31,12 @@ function App() {
             className="px-4 py-2 bg-red-500 text-white rounded font-medium hover:bg-red-600 transition-color"
           />
         </form>
+        <ReactAudioPlayer
+          src="brainfuck.wav"
+          autoPlay
+          controls
+          className="place-self-center"
+        />
       </div>
       <footer className="flex bg-gray-100 p-6 sm:justify-between justify-end">
         <p className="text-gray-400 hidden sm:block">
