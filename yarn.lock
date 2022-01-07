@@ -5828,6 +5828,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-web@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "fs-web@npm:1.0.1"
+  dependencies:
+    path: "git://github.com/component/path.git#7b4f23c38833a5232cd5e3d50ccb8cd13dbcd2f4"
+  checksum: 4b94688e3d83c5d0eda3cd662366fe3d9f77a49d92a134bb4eb5cf75b92b58e107e7caac5da64c8d0abd305a1dc4fec0b45668b3a1087db7836234beb071ef40
+  languageName: node
+  linkType: hard
+
 "fs.realpath@npm:^1.0.0":
   version: 1.0.0
   resolution: "fs.realpath@npm:1.0.0"
@@ -7431,10 +7440,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsmidgen@git+https://github.com/dingram/jsmidgen.git":
+"jsmidgen@npm:^0.1.5":
   version: 0.1.5
-  resolution: "jsmidgen@https://github.com/dingram/jsmidgen.git#commit=97c1270a4af6350d1bf278571a273a4a5fac617c"
-  checksum: 572887a5720e9044f3a2d2d49ebd5595473ea59d854da2fa2024894fa9e830e5b5c9663dbca2d122959c1174dec8c0fe06f50ec692c9e456d84de42ebcef1838
+  resolution: "jsmidgen@npm:0.1.5"
+  checksum: 6f321e044c584bd364a328a93e174e04300ef6167824c81959c720788b150bdc78df00363dd9320a88c3b77b95f02433e079d849171187e438a8735a8781a26c
   languageName: node
   linkType: hard
 
@@ -8120,7 +8129,8 @@ __metadata:
     "@testing-library/user-event": ^13.2.1
     ace-builds: ^1.4.13
     autoprefixer: ^10.4.1
-    jsmidgen: "git+https://github.com/dingram/jsmidgen.git"
+    fs-web: ^1.0.1
+    jsmidgen: ^0.1.5
     postcss: ^8.4.5
     react: ^17.0.2
     react-ace: ^9.5.0
@@ -8673,6 +8683,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
   checksum: 5b1e2daa247062061325b8fdbfd1fb56dde0a448fb1455453276ea18c60685bdad23a445dc148cf87bc216be1573357509b7d4060494a6fd768c7efad833ee45
+  languageName: node
+  linkType: hard
+
+"path@git://github.com/component/path.git#7b4f23c38833a5232cd5e3d50ccb8cd13dbcd2f4":
+  version: 1.0.0
+  resolution: "path@git://github.com/component/path.git#commit=7b4f23c38833a5232cd5e3d50ccb8cd13dbcd2f4"
+  checksum: 53f378c2aeea48aaa6193db4f774138c03b68b4822f105c32b2f3165ad2982c68b4714ae742a0c40e1b286b25b1eaf7945991ae39bb1d0648330f35af5d6f436
   languageName: node
   linkType: hard
 

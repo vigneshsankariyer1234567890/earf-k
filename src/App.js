@@ -1,12 +1,39 @@
 import { useState } from 'react'
-import ReactAudioPlayer from 'react-audio-player'
+import synth from 'synth-js';
+import UploadComponent from './UploadComponent';
+
+import compile from './scripts/b2aCompiler.js';
 
 function App() {
   const [value, setValue] = useState('')
+  const [showAudio, setShowAudio] = useState(false)
 
+  // Creates Brainfuck.mid and Brainfuck.wav under scripts/sounds
   function handleSubmit(event) {
     event.preventDefault()
-    alert(value)
+    compile(value)
+    // setShowAudio(true)
+
+    // let wavName = event.target.files[0].name.replace(/\..+?$/, '.wav');
+    // var reader = new FileReader();
+
+    // // set callback for array buffer
+    // reader.addEventListener('load', function load(event) {
+    //     // convert midi arraybuffer to wav blob
+    //     console.log("jhasdg")
+    //     var wav = synth.midiToWav(event.target.result).toBlob();
+    //     // create a temporary URL to the wav file
+    //     var src = URL.createObjectURL(wav);
+
+    //     let audio = new Audio(src);
+    //     audio.play();
+
+    //     window.open(src);
+        
+    //     // anchor.setAttribute('href', src);
+    // });
+
+    // reader.readAsArrayBuffer(blob);
   }
 
   return (
@@ -31,12 +58,7 @@ function App() {
             className="px-4 py-2 bg-red-500 text-white rounded font-medium hover:bg-red-600 transition-color"
           />
         </form>
-        <ReactAudioPlayer
-          src="brainfuck.wav"
-          autoPlay
-          controls
-          className="place-self-center"
-        />
+        <UploadComponent show={showAudio} />
       </div>
       <footer className="flex bg-gray-100 p-6 sm:justify-between justify-end">
         <p className="text-gray-400 hidden sm:block">
