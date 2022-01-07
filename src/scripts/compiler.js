@@ -5,7 +5,7 @@ function compile(program) {
     let loopStack  = [];
     let innerLoops = 0;
   
-    for( i = 0; i < program.length; i++ ) {
+    for (let i = 0; i < program.length; i++ ) {
   
     const char = program[i];
   

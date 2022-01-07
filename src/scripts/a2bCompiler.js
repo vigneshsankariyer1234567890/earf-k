@@ -24,8 +24,9 @@ function compile(notes) {
     let isLooping = false;
     let loopStack = [];
     let innerLoops = 0;
+    let result = "";
   
-    for( i = 0; i < notes.length; i++ ) {
+    for(let i = 0; i < notes.length; i++ ) {
   
         const char = notes[i];
         
@@ -52,7 +53,7 @@ function compile(notes) {
             tape[ptr] = prompt()[0].charCodeAt()
             break;
         case 'A5':
-            console.log(String.fromCharCode(tape[ptr]));
+            result += String.fromCharCode(tape[ptr]);
             break;
         case 'E5':
             ptr++;
@@ -76,6 +77,8 @@ function compile(notes) {
             break;
         }
     }
+
+    return result;
 }
 
 export default compile;

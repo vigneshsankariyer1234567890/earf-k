@@ -102,11 +102,11 @@ function App() {
           <label className="text-lg font-medium text-gray-800">
             2. Upload your MIDI file and listen!
           </label>
-          <UploadComponent show={showAudio} />
+          <UploadComponent play={true}/>
         </form>
         <form
           className="flex flex-col flex-1 gap-4"
-          onSubmit={() => setOutput('ur mom')}
+          onSubmit={(event) => {event.preventDefault()}}
         >
           <h2 className="text-xl font-medium text-red-500">
             Earfuck to Brainfuck converter
@@ -114,13 +114,7 @@ function App() {
           <label htmlFor="upload" className="text-lg font-medium text-gray-800">
             1. Upload a MIDI file
           </label>
-          <div className="flex items-center justify-between gap-4">
-            <input type="file" />
-            <input
-              type="submit"
-              className="px-4 py-2 font-medium text-white transition-colors bg-red-500 rounded cursor-pointer hover:bg-red-600"
-            />
-          </div>
+          <UploadComponent play={false} setOutput={setOutput}/>
           <h3 className="text-lg font-medium text-gray-800">
             2. Brainfuck output
           </h3>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import ReactAudioPlayer from 'react-audio-player'
 import synth from 'synth-js';
+import getMidi from '../scripts/fftCompiler.js';
+import compile from '../scripts/a2bCompiler.js';
 
 const UploadComponent = (props) => {
     const [selectedFile, setSelectedFile] = useState();
@@ -12,18 +13,23 @@ const UploadComponent = (props) => {
         var reader = new FileReader();
 
         // set callback for array buffer
-        reader.addEventListener('load', function load(event) {
+        reader.addEventListener('load', async function load(event) {
             // convert midi arraybuffer to wav blob
             var wav = synth.midiToWav(event.target.result).toBlob();
-            // create a temporary URL to the wav file
-            var src = URL.createObjectURL(wav);
 
-            let audio = new Audio(src);
-            audio.play();
+            if (props.play) {
+                // create a temporary URL to the wav file
+                var src = URL.createObjectURL(wav);
 
-            // window.open(src);
-            
-            // anchor.setAttribute('href', src);
+                let audio = new Audio(src);
+                audio.play();
+
+                // window.open(src);
+                // anchor.setAttribute('href', src);
+            } else {
+                let notelist = await getMidi(wav);
+                props.setOutput(compile(notelist));
+            }
         });
 
         // read the file as an array buffer
@@ -31,16 +37,12 @@ const UploadComponent = (props) => {
 	};
 
     return(
-        <div>
+        <div className="flex items-center justify-between gap-4">
             <input type="file" name="file" onChange={changeHandler} />
-            {props.show 
-                ? <ReactAudioPlayer
-                    src="./scripts/sounds/Brainfuck.wav"
-                    autoPlay
-                    controls
-                    className="place-self-center"
-                />
-                : null }
+            <input
+              type="submit"
+              className="px-4 py-2 font-medium text-white transition-colors bg-red-500 rounded cursor-pointer hover:bg-red-600"
+            />
         </div>
     )
 }
