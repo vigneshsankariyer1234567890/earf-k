@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import synth from 'synth-js'
 import UploadComponent from './UploadComponent'
 
 import compile from './scripts/b2aCompiler.js'
 
 function App() {
   const [value, setValue] = useState('')
-  const [showAudio, setShowAudio] = useState(false)
   const [output, setOutput] = useState('')
 
   // Creates Brainfuck.mid and Brainfuck.wav under scripts/sounds

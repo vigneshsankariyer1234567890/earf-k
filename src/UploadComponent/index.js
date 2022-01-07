@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import synth from 'synth-js';
 import getMidi from '../scripts/fftCompiler.js';
 import compile from '../scripts/a2bCompiler.js';
 
 const UploadComponent = (props) => {
-    const [selectedFile, setSelectedFile] = useState();
+    // const [selectedFile, setSelectedFile] = useState();
 	// const [isFilePicked, setIsFilePicked] = useState(false);
 
 	const changeHandler = (event) => {
-		setSelectedFile(event.target.files[0]);
+		// setSelectedFile(event.target.files[0]);
         // let wavName = event.target.files[0].name.replace(/\..+?$/, '.wav');
         var reader = new FileReader();
 

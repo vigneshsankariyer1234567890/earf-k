@@ -1,7 +1,6 @@
 import Midi from 'jsmidgen';
-import synth from 'synth-js';
 
-const fs = require('fs-web');
+// const fs = require('fs-web');
 
 // const fs = require('fs')
 // const Midi = require('jsmidgen')
