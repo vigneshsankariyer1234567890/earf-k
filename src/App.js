@@ -98,8 +98,8 @@ function App() {
             <p className="text-gray-800">Yes.</p>
           </div>
           <div>
-            <h4 className="mb-2 text-xl font-medium text-red-500">
-              <a target="_blank" rel="noopener noreferrer" href="https://devpost.com/software/earf_ck">About our project.</a>
+            <h4 className="mt-2 mb-2 text-l font-bold text-red-500">
+              <a target="_blank" rel="noopener noreferrer" href="https://devpost.com/software/earf_ck">About our project</a>
             </h4>
           </div>
         </section>
