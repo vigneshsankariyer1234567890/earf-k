@@ -21,7 +21,7 @@ var brainFuckDict = {
   ']': 'C6'
 };
 
-const parseChar = (char) => dict[char];
+const parseChar = (char) => brainFuckDict[char];
 
 function compile(program) {
   let notes = []
