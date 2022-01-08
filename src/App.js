@@ -97,6 +97,11 @@ function App() {
             </h2>
             <p className="text-gray-800">Yes.</p>
           </div>
+          <div>
+            <h4 className="mb-2 text-xl font-medium text-red-500">
+              <a target="_blank" rel="noopener noreferrer" href="https://devpost.com/software/earf_ck">About our project.</a>
+            </h4>
+          </div>
         </section>
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-4">
           <h2 className="text-xl font-medium text-red-500">
@@ -154,12 +159,12 @@ function App() {
       </div>
       <footer className="flex justify-end p-6 bg-gray-100 sm:justify-between">
         <p className="hidden text-gray-400 sm:block">
-          Built by Gokul, Hyung Woon, Shem and Vignesh for Hack&Roll2022.
+          Built by Gokul, Hyung Woon, Shem and Vignesh for Hack&amp;Roll 2022.
         </p>
         <a
           target="_blank"
           href="https://github.com/vigneshsankariyer1234567890/earf__k"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="cursor-pointer"
         >
           <svg
