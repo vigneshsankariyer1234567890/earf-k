@@ -11,14 +11,6 @@
 
 function compile(notes) {
 
-    // const freq_to_midi = (freq) => Math.log2(freq / 440) * 12 + 69; 
-    // const midi_to_note = (midi) => {
-    //     let octave = ((midi / 12) - 1).toString();
-    //     let note = octave + substring("C C#D D#E F F#G G#A A#B ", (midi % 12) * 2, 2);
-    // };
-
-    // let notes = freqs.map(freq_to_midi).map(midi_to_note);
-
     let tape = Array(30000).fill(0);
     let ptr = 0;
     let isLooping = false;

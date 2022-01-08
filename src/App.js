@@ -11,28 +11,6 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault()
     compile(value)
-    // setShowAudio(true)
-
-    // let wavName = event.target.files[0].name.replace(/\..+?$/, '.wav');
-    // var reader = new FileReader();
-
-    // // set callback for array buffer
-    // reader.addEventListener('load', function load(event) {
-    //     // convert midi arraybuffer to wav blob
-    //     console.log("jhasdg")
-    //     var wav = synth.midiToWav(event.target.result).toBlob();
-    //     // create a temporary URL to the wav file
-    //     var src = URL.createObjectURL(wav);
-
-    //     let audio = new Audio(src);
-    //     audio.play();
-
-    //     window.open(src);
-
-    //     // anchor.setAttribute('href', src);
-    // });
-
-    // reader.readAsArrayBuffer(blob);
   }
 
   return (
