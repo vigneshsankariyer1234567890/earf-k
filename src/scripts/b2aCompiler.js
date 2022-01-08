@@ -1,11 +1,5 @@
 import Midi from 'jsmidgen';
 
-// const fs = require('fs-web');
-
-// const fs = require('fs')
-// const Midi = require('jsmidgen')
-// const synth = require('synth-js')
-
 // Converts a given Brainfuck program into audio.
 // The Brainfuck-Frequency mapping is as follows:
 // >    = Right shift   = E5
@@ -16,72 +10,25 @@ import Midi from 'jsmidgen';
 // ,    = Input         = B5
 // [    = Loop start    = C5
 // ]    = Loop end      = C6
+var brainFuckDict = {
+  '+': 'G5',
+  '-': 'F5',
+  ',': 'B5',
+  '.': 'A5',
+  '>': 'E5',
+  '<': 'D5',
+  '[': 'C5',
+  ']': 'C6'
+};
+
+const parseChar = (char) => dict[char];
 
 function compile(program) {
-  // let tape = Array(30000).fill(0)
-  // let ptr = 0
-  // let isLooping = false
-  // let loopStack = []
-  // let innerLoops = 0
   let notes = []
 
   for (let i = 0; i < program.length; i++) {
     const char = program[i]
-
-    // if (isLooping) {
-    //   if (char === '[') {
-    //     innerLoops++
-    //     if (char === ']') {
-    //       if (innerLoops === 0) {
-    //         isLooping = false
-    //       } else {
-    //         innerLoops--
-    //       }
-    //     }
-    //   }
-    //   continue
-    // }
-
-    switch (char) {
-      case '+':
-        // tape[ptr]++
-        notes.push('G5')
-        break
-      case '-':
-        // tape[ptr]--
-        notes.push('F5')
-        break
-      case ',':
-        // tape[ptr] = prompt()[0].charCodeAt()
-        notes.push('B5')
-        break
-      case '.':
-        // console.log(String.fromCharCode(tape[ptr]))
-        notes.push('A5')
-        break
-      case '>':
-        // ptr++
-        // tape[ptr] = tape[ptr] || 0
-        notes.push('E5')
-        break
-      case '<':
-        // ptr--
-        // tape[ptr] = tape[ptr] || 0
-        notes.push('D5')
-        break
-      case '[':
-        // tape[ptr] === 0 ? (isLooping = true) : loopStack.push(i)
-        notes.push('C5')
-        break
-      case ']':
-        // tape[ptr] !== 0
-        //   ? (i = loopStack[loopStack.length - 1])
-        //   : loopStack.pop()
-        notes.push('C6')
-        break
-      default:
-        break
-    }
+    notes.push(parseChar(char));
   }
 
   var file = new Midi.File();
