@@ -36,7 +36,9 @@ function compile(program) {
   file.addTrack(track);
 
   for (let j = 0; j < notes.length; j++) {
-    track.addNote(0, notes[j], 64)
+    if (notes[j]) {
+      track.addNote(0, notes[j], 64)
+    }
   }
 
   const bytes = file.toBytes();
