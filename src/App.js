@@ -66,30 +66,58 @@ function App() {
               What is Earf_ck?
             </h2>
             <p className="mb-2 text-gray-800">
-              Earf_ck is a language developed to convert Audio into Brainfuck programming
-              language, and vice versa. 
+              Earf_ck is primarily an Audio-based language that compiles to Brainfuck programming language. 
+              It is also able to map a given Brainfuck program into its audio version. 
+            </p>
+            <p className="mb-2 text-gray-800">
+              The mapping between the Brainfuck commands and the notes are given below:
             </p>
             <p className="text-gray-800">
-              This was developed purely for fun, but this might have practical applications. Maybe.
+              &gt;   =   Right shift   =   E5
             </p>
+            <p className="text-gray-800">
+              &lt;   =   Left shift    =   D5
+            </p>
+            <p className="text-gray-800">
+              +   =   Increment     =   G5
+            </p>
+            <p className="text-gray-800">
+              -   =   Decrement     =   F5
+            </p>
+            <p className="text-gray-800">
+              .   =   Output        =   A5
+            </p>
+            <p className="text-gray-800">
+              ,   =   Input         =   B5
+            </p>
+            <p className="text-gray-800">
+              [   =   Loop start    =   C5
+            </p>
+            <p className="mb-2 text-gray-800">
+              ]   =   Loop end      =   C6
+            </p>
+            <p className="text-gray-800">
+              This was developed purely for fun, but this might have practical applications.
+            </p>
+            <p className="mb-2 text-gray-800">
+              Maybe.
+            </p>
+          </div>
+          <div>
+            <h2 className="mb-2 text-xl font-medium text-red-500">
+              What's next for Earf_ck?
+            </h2>
+            <p className="text-gray-800">
+              We want to introduce more variations in tone &amp; pitch, note durations, instrumentation, etc.,
+              which would allow us to create a more robust set of instructions that might possibly be easier
+              to use than one that is based on Brainfuck, which would be more intuitive and easier to learn for
+              the average programmer.</p>
           </div>
           <div>
             <h2 className="mb-2 text-xl font-medium text-red-500">
               Why do this? This is pointless.
             </h2>
             <p className="text-gray-800">Yes.</p>
-          </div>
-          <div>
-            <h2 className="mb-2 text-xl font-medium text-red-500">
-              How long did this take?
-            </h2>
-            <p className="text-gray-800">More than we thought we would.</p>
-          </div>
-          <div>
-            <h2 className="mb-2 text-xl font-medium text-red-500">
-              What's next?
-            </h2>
-            <p className="text-gray-800">No idea.</p>
           </div>
         </section>
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-4">
@@ -102,8 +130,11 @@ function App() {
           >
             1. Input Brainfuck instructions
           </label>
+          <p className="mb-1 text-gray-600">
+            Any program written in Brainfuck will be converted to a MIDI file written in Earf_ck for download!
+          </p>
           <p className="text-gray-600">
-            To convert it to a MIDI file for download
+            E.g. This program prints out "Hello, World!" in Brainfuck: &gt;++++++++[&lt;+++++++++&gt;-]&lt;.&gt;++++[&lt;+++++++&gt;-]&lt;+.+++++++..+++.&gt;&gt;++++++[&lt;+++++++&gt;-]&lt;++.------------.&gt;++++++[&lt;+++++++++&gt;-]&lt;+.&lt;.+++.------.--------.&gt;&gt;&gt;++++[&lt;++++++++&gt;-]&lt;+.
           </p>
           <div className="flex gap-4">
             <input
@@ -119,7 +150,7 @@ function App() {
             />
           </div>
           <label className="text-lg font-medium text-gray-800">
-            2. Upload your MIDI file and listen!
+            2. Upload your MIDI file and listen to your code!
           </label>
           <UploadComponent play={true}/>
         </form>
@@ -131,11 +162,14 @@ function App() {
             Earf_ck to Brainfuck converter
           </h2>
           <label htmlFor="upload" className="text-lg font-medium text-gray-800">
-            1. Upload a MIDI file
+            1. Upload a MIDI file written in Earf_ck
           </label>
+          <p className="text-gray-600">
+            E.g. You can create a MIDI file written in Earf_ck through the Brainfuck to Earf_ck converter.
+          </p>
           <UploadComponent play={false} setOutput={setOutput}/>
           <h3 className="text-lg font-medium text-gray-800">
-            2. Brainfuck output
+            2. Here's the compiled Brainfuck output from the Earf_ck MIDI file you provided!
           </h3>
           <div className="p-6 text-gray-800 bg-gray-100 rounded">{output}</div>
         </form>
