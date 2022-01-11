@@ -15,7 +15,10 @@ const UploadComponent = (props) => {
         // set callback for array buffer
         reader.addEventListener('load', async function load(event) {
             // convert midi arraybuffer to wav blob
-            var wav = synth.midiToWav(event.target.result).toBlob();
+            var wav = event.target.result //synth.midiToWav(event.target.result).toBlob();
+            console.log(wav)
+            console.log(event.target.result instanceof Blob)
+            let wavBlob = new Blob([wav])
 
             if (props.play) {
                 // create a temporary URL to the wav file
@@ -27,7 +30,7 @@ const UploadComponent = (props) => {
                 // window.open(src);
                 // anchor.setAttribute('href', src);
             } else {
-                let notelist = await getMidi(wav);
+                let notelist = await getMidi(wavBlob);
                 props.setOutput(compile(notelist));
             }
         });

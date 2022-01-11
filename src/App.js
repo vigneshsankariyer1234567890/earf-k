@@ -114,7 +114,7 @@ function App() {
             1. Input Brainfuck instructions
           </label>
           <p className="mb-1 text-gray-600">
-            Any program written in Brainfuck will be converted to a MIDI file written in Earf_ck for download!
+            Any program written in Brainfuck will be converted to a .wav file written in Earf_ck for download!
           </p>
           <p className="text-gray-600">
             E.g. This program prints out "Hello, World!" in Brainfuck: &gt;++++++++[&lt;+++++++++&gt;-]&lt;.&gt;++++[&lt;+++++++&gt;-]&lt;+.+++++++..+++.&gt;&gt;++++++[&lt;+++++++&gt;-]&lt;++.------------.&gt;++++++[&lt;+++++++++&gt;-]&lt;+.&lt;.+++.------.--------.&gt;&gt;&gt;++++[&lt;++++++++&gt;-]&lt;+.
@@ -145,10 +145,10 @@ function App() {
             Earf_ck to Brainfuck converter
           </h2>
           <label htmlFor="upload" className="text-lg font-medium text-gray-800">
-            1. Upload a MIDI file written in Earf_ck
+            1. Upload a .wav file written in Earf_ck
           </label>
           <p className="text-gray-600">
-            E.g. You can create a MIDI file written in Earf_ck through the Brainfuck to Earf_ck converter.
+            E.g. You can create a .wav file written in Earf_ck through the Brainfuck to Earf_ck converter.
           </p>
           <UploadComponent play={false} setOutput={setOutput}/>
           <h3 className="text-lg font-medium text-gray-800">

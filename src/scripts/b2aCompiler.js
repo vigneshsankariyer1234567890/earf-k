@@ -1,4 +1,6 @@
 import Midi from 'jsmidgen';
+import synth from 'synth-js';
+import buffer from 'buffer';
 
 // Converts a given Brainfuck program into audio.
 // The Brainfuck-Frequency mapping is as follows:
@@ -43,9 +45,10 @@ function compile(program) {
 
   const bytes = file.toBytes();
   const b64 = btoa(bytes);
-  const uri = 'data:audio/midi;base64,' + b64;
-
-  window.open(uri);
+  // const uri = 'data:audio/midi;base64,' + b64;
+  const buf = buffer.Buffer.from(b64, 'base64');
+  const wavBlob = synth.midiToWav(buf).toBlob();
+  window.open(URL.createObjectURL(wavBlob));
 
   // function Download(arrayBuffer, type) {
   //   var blob = new Blob([arrayBuffer], { type: type });
