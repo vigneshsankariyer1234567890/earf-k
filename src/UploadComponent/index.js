@@ -16,8 +16,6 @@ const UploadComponent = (props) => {
         reader.addEventListener('load', async function load(event) {
             // convert midi arraybuffer to wav blob
             var wav = event.target.result //synth.midiToWav(event.target.result).toBlob();
-            console.log(wav)
-            console.log(event.target.result instanceof Blob)
             let wavBlob = new Blob([wav])
 
             if (props.play) {
