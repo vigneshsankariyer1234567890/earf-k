@@ -1,6 +1,7 @@
 {
   "name": "my-react-app",
   "version": "0.1.0",
+  "homepage": "https://gok99.github.io/earf__k",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.4.2",
@@ -12,6 +13,7 @@
     "buffer": "^6.0.3",
     "fft.js": "git+https://github.com/indutny/fft.js.git",
     "fs-web": "^1.0.1",
+    "gh-pages": "^3.2.3",
     "jsmidgen": "^0.1.5",
     "node-wav": "^0.0.2",
     "react": "^17.0.2",
@@ -23,6 +25,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
