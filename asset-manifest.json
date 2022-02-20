@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/earf__k/static/css/main.abe75ca2.css",
+    "main.js": "/earf__k/static/js/main.9264e19f.js",
+    "static/js/787.b6db34ba.chunk.js": "/earf__k/static/js/787.b6db34ba.chunk.js",
+    "index.html": "/earf__k/index.html",
+    "main.abe75ca2.css.map": "/earf__k/static/css/main.abe75ca2.css.map",
+    "main.9264e19f.js.map": "/earf__k/static/js/main.9264e19f.js.map",
+    "787.b6db34ba.chunk.js.map": "/earf__k/static/js/787.b6db34ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abe75ca2.css",
+    "static/js/main.9264e19f.js"
+  ]
+}
